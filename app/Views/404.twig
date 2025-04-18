@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>404 - Página não encontrada</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body {
+            background: #181825;
+            min-height: 100vh;
+            font-family: 'Press Start 2P', monospace;
+        }
+        .pixel-border {
+            border: 6px solid #22223b;
+            box-shadow: 0 0 0 3px #f72585, 0 0 0 6px #22223b;
+            background: #232946;
+        }
+        .pixel-art {
+            image-rendering: pixelated;
+        }
+        .glitch {
+            color: #f72585;
+            position: relative;
+            animation: glitch 1.2s infinite linear alternate-reverse;
+        }
+        @keyframes glitch {
+            0% { left: 0; text-shadow: 2px 0 #3a86ff, -2px 0 #f72585;}
+            20% { left: 2px; text-shadow: -2px 0 #3a86ff, 2px 0 #f72585;}
+            40% { left: -2px; text-shadow: 2px 0 #f72585, -2px 0 #3a86ff;}
+            60% { left: 1px; text-shadow: -1px 0 #f72585, 1px 0 #3a86ff;}
+            80% { left: -1px; text-shadow: 1px 0 #3a86ff, -1px 0 #f72585;}
+            100% { left: 0; text-shadow: 2px 0 #f72585, -2px 0 #3a86ff;}
+        }
+        .pixel-btn {
+            background: #f72585;
+            color: #fff;
+            border: 3px solid #3a86ff;
+            padding: 0.5rem 1.5rem;
+            font-size: 0.85rem;
+            font-family: 'Press Start 2P', monospace;
+            box-shadow: 0 2px #3a86ff;
+            transition: all 0.2s;
+            border-radius: 0;
+        }
+        .pixel-btn:hover {
+            background: #3a86ff;
+            color: #fff;
+            border-color: #f72585;
+            box-shadow: 0 1px #f72585;
+        }
+        @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+        .bug {
+            animation: bug-move 2.5s infinite alternate;
+        }
+        @keyframes bug-move {
+            0% { transform: translateX(0);}
+            100% { transform: translateX(18px);}
+        }
+        @media (max-width: 500px) {
+            .pixel-border { padding: 0.5rem !important; }
+        }
+    </style>
+</head>
+<body class="flex items-center justify-center">
+    <div class="pixel-border max-w-xs w-full mx-2 mt-8 flex flex-col items-center p-4">
+        
+        <span class="text-4xl glitch font-extrabold mb-2">404</span>
+        <h2 class="text-base text-[#f1faee] font-bold mb-2 text-center leading-tight">Ops, caminho não encontrado :(</h2>
+        <a href="/" class="pixel-btn mt-2">Voltar ao início</a>
+    </div>
+</body>
+</html>
